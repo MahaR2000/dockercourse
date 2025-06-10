@@ -106,3 +106,6 @@ to build a dockerfile
 
 to run a dockerfile
 >> docker run firstimage
+
+to override argument in dockerfile
+>> docker run thirdimage khan
