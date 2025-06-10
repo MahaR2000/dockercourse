@@ -96,7 +96,7 @@ WORKDIR:
 	WORKDIR /path/to/workdir
 	=> sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD
 
-Lab:
+Useful cli commands:
 
 to build a dockerfile
 >> docker build -f first.dockerfile -t firstimage .
@@ -109,3 +109,43 @@ to run a dockerfile
 
 to override argument in dockerfile
 >> docker run thirdimage khan
+
+Lab:
+# Install docker in EC2 using commands from below url:
+https://docs.docker.com/engine/install/ubuntu/
+
+# clone github repo to local
+git clone https://github.com/lzmkhan/dockercourse.git
+
+# use change directory to navigate to dockercourse folder
+cd dockercourse
+
+# use ls to see what files are present
+ls 
+
+# use cat to read content of hello_world.py
+cat hello_world.py
+
+# use cat to view first.dockerfile
+cat first.dockerfile
+
+# check the content of first.dockerfile
+
+# build your first docker image
+docker build -f first.dockerfile -t firstimage .
+=> -t means tag
+=> -f means filepath of the dockerfile
+=> . means local cache
+
+# check if image is created
+docker images
+
+# run your first docker container image
+docker run firstimage
+
+# check if the firstimage is listed in ps command
+docker ps -a
+
+repeat for secondimage, thirdimage and fourthimage
+read the dockerfiles for difference and how we are leverage base layers
+and extending them.
