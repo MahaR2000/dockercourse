@@ -1,11 +1,11 @@
-Docker introduction
-What is docker
+# Docker introduction
+## What is docker
  platform for developing, shipping and running applications. Provides a way to run applications in an loosely isolated environment.
  Docker provides a set of tools to manage lifecycle of containers, like creation, updation, deletions.
  Lets you package your application along with its dependency to make it run the same everywhere.
  
  
-why we need docker
+## why we need docker
 In devops its used to provide consistent development environment for developers
  In application development, it lets you freeze your environment and deploy it exactly as it is in local on different hosts like datacenter and
  cloud.
@@ -13,7 +13,7 @@ In devops its used to provide consistent development environment for developers
  can be ran on same host.
  docker lets you run variable workloads in the same machine. 
 
-real life example
+## real life example
  Let say, your development teams has Nodejs and python developers for frontend and backend.
  You want to provide a consistent development environment for them to develop. things like same framework version, their dependency
  are important in such matters. You can create docker images with development related installations. package them
@@ -21,8 +21,8 @@ real life example
  development environment exactly same as the one you created in yours.
  
 
-docker objects
-	docker  images
+## docker objects
+	### docker  images
 		- docker images are readonly-templates for creating docker containers. Its like a blueprint along with materials that is required to build a car.
 		- usually docker images are based on another images with some added layer of customization.
 		Ex: a python 3.11 base image, set of libraries required to develop and run FASTAPI server. when combined can be used for API server
@@ -34,7 +34,7 @@ docker objects
 		be rebuilt.
 		
 		
-	docker containers
+	### docker containers
 		- is a runnable instance of an image
 		-  you can create, stop, delete, run a container using docker api or client
 		- you can connect containers to multiple networks, storages or even make new images based on its current state.
@@ -44,25 +44,25 @@ docker objects
 		- when a container is removed any state not stored in persistant storage is removed.
 		
 
-docker registry, private vs public
+## docker registry, private vs public
 	- docker registry is where public docker images are pushed to and pulled from. 
 	- it is like repository for docker images.
 	- there are also private registries like artifactory and aws ecr that lets you manage your docker images privately.
 	
-docker engine:
+## docker engine:
 	- main part of the docker ecosystem. It is the containerzation technology that let us create and main docker containers.
 	
-docker daemon:
+## docker daemon:
 	- it is the part of docker engine. It is a background service, that listens to docker api requests and manages docker components like
 	container, network, images, volumes etc.
 	
-docker client:
+## docker client:
 	- this is primary way users interact with docker services. its used to communicate with docker daemon.
 	
-docker compose:
+## docker compose:
 	- Its a tool used to define and run multiple containers from a single YAML file.
 	
-difference between containers and hypervisor based virtual machines
+## difference between containers and hypervisor based virtual machines
 	containers:
 	share host os kernel and contain only application and its dependencies
 	fairly isolated but may have risks as they share OS kernel
@@ -74,17 +74,3 @@ difference between containers and hypervisor based virtual machines
 	completely isolated environment from host os
 	requires more cpu resources as it runs complete os
 	longer than containers
-
-
-
-docker commands:
-=================
-how to install docker in ubuntu
-how to start docker
-how to list docker containers that is running currently
-how to run a docker containers
-what is inside a docker file
-what is inside a docker compose yaml file
-
-
-example of dockerfile, running it.
