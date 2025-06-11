@@ -135,7 +135,8 @@ cat first.dockerfile
 docker build -f first.dockerfile -t firstimage .
 => -t means tag
 => -f means filepath of the dockerfile
-=> . means local cache
+=> . means use the files from the current directory. If your source files are present in other directory
+specify the path. The files in the specified directly will be sent to docker daemon to build images.
 
 # check if image is created
 docker images
