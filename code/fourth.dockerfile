@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     git
 
 # defining ENV variables
-ENV WORKINGDIR=/app/dockercourse
+ENV WORKINGDIR=/app
 
 # cloning a remote repository into the WORKINGDIR
 RUN git clone https://github.com/lzmkhan/dockercourse.git
@@ -24,7 +24,7 @@ RUN git clone https://github.com/lzmkhan/dockercourse.git
 WORKDIR $WORKINGDIR
 
 # Copying the hello_world_args.py script to the /app directory
-COPY hello_world_args.py /app/
+COPY dockercourse/code/hello_world_args.py /app/
 
 # Setting the default command to run the hello_world_args.py script with a default argument
 CMD ["Hodor Lanister"]
