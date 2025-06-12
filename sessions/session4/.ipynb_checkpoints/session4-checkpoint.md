@@ -164,5 +164,5 @@ It should print the same timestamp.
 `sudo docker build -f nine.dockerfile -t nineimage .`
 
 `docker run --mount type=bind,src=type=bind,src=/home/uib42790/src_folder,target=/mounted,target=/mounted nineimage`
-
+ note: /home/uib42790/src_folder will change in ec2
 
