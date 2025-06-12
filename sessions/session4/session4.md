@@ -139,9 +139,30 @@ and container.
 
 ## Lab - docker volumes
 
-### Create a volume:
-`docker volumne create todo-db`
+#### check seventh.dockerfile
 
+#### Create a volume
+`sudo docker volume create myvolume`
 
+#### build seventh.dockerfile
+`sudo docker build -f seventh.dockerfile -t seventhimage .`
+
+#### Run the seventh image
+`docker run -v myvolume:/app/data seventhimage`
+
+There should be a message printing current timestamp
+
+#### build eigth.dockerfile
+`sudo docker build -f eight.dockerfile -t eightimage .`
+
+#### run the eight image
+`sudo docker run -v myvolume:/app/data  eightimage`  
+It should print the same timestamp.
+
+#### To bind mount
+
+`sudo docker build -f nine.dockerfile -t nineimage .`
+
+`docker run --mount type=bind,src=type=bind,src=/home/uib42790/src_folder,target=/mounted,target=/mounted nineimage`
 
 
