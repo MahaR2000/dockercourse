@@ -6,7 +6,6 @@ FROM ubuntu:${VERSION}
 # this is just metadata information.
 LABEL com.personal.author="Khan"
       
-
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
