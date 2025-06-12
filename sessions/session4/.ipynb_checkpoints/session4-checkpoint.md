@@ -1,22 +1,33 @@
 
-## To show all objects with a given label, specify the label's key name without the value:  
-`docker ps --filter "label=com.example.demo"  `
-`docker images --filter "label=com.example.demo"  `
-## to view labels  
-`docker inspect my-container`  
 
-## Remove local images  
-`sudo docker images prune -a`  
--a means all  
+## LAB:
 
-`sudo docker images myimage`    
-will remove only image named "myimage"    
+### Lets build fifth.dockerfile:  
+`docker build -f fifth.dockerfile -t fifthimage .`  
 
-## Stopping a container  
-`sudo docker stop container-name`
+### lets run the container
+`docker run fifthimage`
 
-## Kill a container
-`sudo docker kill container-name`
+### and now with environment variable override:
+`docker run -e TITLE=GameOfThrones fifthimage`  
+
+### lets build sixth.dockerfile
+`docker build -f sixth.dockerfile -t sixthimage .`  
+
+### lets run the container
+`docker run --name six sixthimage`
+
+### What if we want to stop the container
+`sudo docker stop six`
+
+the program still count downs to 0.  
+
+### start the container again  
+`sudo docker start six`
+
+### Now use kill command 
+`sudo docker kill six`
+program immediately ends.
 
 The difference between stop and kill is that stop is soft process
 means your program can accept certain signals to stop. during the stop
@@ -27,10 +38,37 @@ Use stop to gracefully stop the container while use kill to end container abrupt
 When using stop, docker waits for the program to end before stopping the container
 while kill immediately kills the container.
 
-## restarting a container  
-`sudo docker restart container-name`
+### To show all objects with a given label, specify the label's key name without the value:  
+`docker ps --filter "label=com.example.demo"  `
+`docker images --filter "label=com.example.demo"  `
 
+### To filter container where author is khan  
+`docker ps --filter "label=com.personal.author=Khan" -a`
+
+### To filter container where author is hisenburg  
+`docker ps --filter "label=com.personal.author=Hisenburg" -a`  
+
+### to view labels  
+`docker inspect six`  
+
+### restarting a container  
+`sudo docker restart six`
+
+### to clear build cache:
+`docker builder prune`.
 `
+### Remove local containers that are stopped
+`docker container prune`
+
+`docker image remove fifthimage:latest`    
+will remove only image named "fifthimage:latest"    
+
+### Remove local images  
+`sudo docker image prune -a`  
+-a means all , only works when there is no container using the images. first
+remove the container before image
+
+
 
 # Persisting data in docker containers
 
@@ -97,3 +135,13 @@ Uses:
 sharing config files between host and containers
 sharing source code or build artifacts between development environment on host
 and container.
+
+
+## Lab - docker volumes
+
+### Create a volume:
+`docker volumne create todo-db`
+
+
+
+
