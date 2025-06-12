@@ -11,4 +11,4 @@ RUN apt-get update && apt-get install -y \
 RUN git clone https://github.com/lzmkhan/dockercourse.git /app
 WORKDIR app/sessions/session4/code
 
-ENTRYPOINT ["python3", "stop_kill.py"]
+ENTRYPOINT ["python3", "stop_kill2.py"]
