@@ -68,6 +68,7 @@ will remove only image named "fifthimage:latest"
 -a means all , only works when there is no container using the images. first
 remove the container before image
 
+**NEVER USE PRUNE COMMANDS ON PRODUCTION**
 
 
 # Persisting data in docker containers
