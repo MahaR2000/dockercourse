@@ -1,0 +1,32 @@
+version: '3.8' # docker compose version
+services: # apps and containers to be run
+  frontend_app: # name of the container
+    build: # action
+      dockerfile: frontend.Dockerfile # name of the dockerfile
+      context: frontend/ # where the docker file exist
+    ports:
+      - "80:80" # hostport:containerport 
+    depends_on:
+      backend_app:
+        condition: service_healthy
+  backend_app:
+    build:
+      dockerfile: backend.Dockerfile
+      context: backend/
+    ports:
+      - "8080:8080"
+    depends_on:
+      backend_database:
+        condition: service_started
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/ping" ]
+      interval: 5s
+      timeout: 2s
+      retries: 5
+  backend_database:
+    build:
+      dockerfile: database.Dockerfile
+      context: database/
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
