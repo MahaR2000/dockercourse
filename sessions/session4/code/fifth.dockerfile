@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
     git
 
 # cloning a remote repository into the WORKINGDIR
-RUN git clone https://github.com/lzmkhan/dockercourse.git /app
+RUN git clone https://github.com/MahaR2000/dockercourse.git /app
 
 # defining ENV variables
 ENV TITLE=Session4
