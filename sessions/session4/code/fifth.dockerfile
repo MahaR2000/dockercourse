@@ -18,7 +18,7 @@ RUN git clone https://github.com/MahaR2000/dockercourse.git /app
 # defining ENV variables
 ENV TITLE=Session4
 
-WORKDIR /app
+WORKDIR /app/sessions/session4/code
 
 # Setting the entry point to the hello_world_2.py script
 ENTRYPOINT ["python3", "hello_world_2.py"]
