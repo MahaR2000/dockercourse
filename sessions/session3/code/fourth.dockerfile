@@ -24,7 +24,7 @@ RUN git clone https://github.com/lzmkhan/dockercourse.git
 WORKDIR $WORKINGDIR
 
 # Copying the hello_world_args.py script to the /app directory
-COPY dockercourse/code/hello_world_args.py /app/
+COPY dockercourse/sessions/session3/code/hello_world_args.py /app/
 
 # Setting the default command to run the hello_world_args.py script with a default argument
 CMD ["Hodor Lanister"]
