@@ -94,5 +94,5 @@ In Docker swarms,
  Worker node
  1. checks for the tasks
  2. executes the tasks
-https://youtu.be/lnVqEh6FOPE
+https://www.youtube.com/watch?v=nql8miBaLGU&list=PLCu85z1OJ53n56VupLQB3ZlTuNj_a3TEJ
 
