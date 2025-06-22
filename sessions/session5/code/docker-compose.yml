@@ -1,4 +1,4 @@
-version: '3.8' # docker compose version
+# version: '3.8' # docker compose version
 services: # apps and containers to be run
   frontend_app: # name of the container
     build: # action
