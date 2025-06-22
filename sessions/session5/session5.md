@@ -22,7 +22,7 @@ Benefits of docker compose:
 
 ## build our frontend image
 `cd frontend`
-`sudo docker build -f frontend/frontend.Dockerfile -t frontendimage .`
+`sudo docker build -f frontend.Dockerfile -t frontendimage .`
 
 ## build our backend image
 `cd backend`
@@ -31,7 +31,7 @@ Benefits of docker compose:
 
 ## build our database image
 `cd database`
-`sudo docker build -f database/database.Dockerfile -t databaseimage .`
+`sudo docker build -f database.Dockerfile -t databaseimage .`
 
 ## Order in which the container has to run.
 1. our frontend depends on backend
@@ -40,6 +40,9 @@ Benefits of docker compose:
 So first we need to run our database container
 second we need to run our backend server
 third we need to run our frontend.
+
+If you get port 80 in use do the following commands in ubuntu:
+`sudo systemctl kill apache2`
 
 
 # Lets run the containers
@@ -59,7 +62,9 @@ third we need to run our frontend.
 Homework: 
 What could go wrong when you run backend server and frontend before running the database? Try it out. You can try to add a user.
 
-
+# lets remove all docker containers
+`sudo docker stop $(docker ps -a -q)`
+`sudo docker rm $(docker ps -a -q)`
 
 ## look at docker-compose.yaml
 
